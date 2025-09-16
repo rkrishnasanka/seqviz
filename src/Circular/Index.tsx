@@ -5,6 +5,8 @@ import { Coor, Size } from "../elements";
 import { indexLine, indexTick, indexTickLabel, svgText } from "../style";
 import { GenArcFunc, RENDER_SEQ_LENGTH_CUTOFF } from "./Circular";
 
+import type { JSX } from "react";
+
 interface IndexProps {
   center: Coor;
   compSeq: string;

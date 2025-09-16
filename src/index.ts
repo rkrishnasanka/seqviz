@@ -1,3 +1,4 @@
+import { createRoot } from "react-dom/client";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { renderToString as reactRenderToString } from "react-dom/server";
@@ -49,7 +50,8 @@ const Viewer = (element: string | HTMLElement = "root", options: SeqVizProps) =>
    */
   const render = () => {
     rendered = true;
-    ReactDOM.render(viewer, domElement);
+    const root = createRoot(domElement);
+    root.render(viewer);
     return viewer;
   };
 
@@ -68,7 +70,8 @@ const Viewer = (element: string | HTMLElement = "root", options: SeqVizProps) =>
     viewer = React.createElement(SeqViz, options, null);
 
     if (rendered) {
-      ReactDOM.render(viewer, domElement);
+      const root = createRoot(domElement);
+      root.render(viewer);
     }
     return viewer;
   };

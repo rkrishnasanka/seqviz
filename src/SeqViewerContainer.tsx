@@ -26,8 +26,8 @@ export interface CustomChildrenProps {
 }
 
 export interface SeqVizChildRefs {
-  circular?: React.RefObject<HTMLElement>;
-  linear?: React.RefObject<HTMLElement>;
+  circular?: React.RefObject<HTMLElement | null>;
+  linear?: React.RefObject<HTMLElement | null>;
 }
 
 interface SeqViewerContainerProps {
@@ -51,7 +51,7 @@ interface SeqViewerContainerProps {
   seqType: SeqType;
   showComplement: boolean;
   showIndex: boolean;
-  targetRef: React.LegacyRef<HTMLDivElement>;
+  targetRef: React.Ref<HTMLDivElement>;
   /** testSize is a forced height/width that overwrites anything from sizeMe. For testing */
   testSize?: { height: number; width: number };
   translations: NameRange[];

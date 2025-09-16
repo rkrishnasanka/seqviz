@@ -5,6 +5,8 @@ import { randomID } from "../sequence";
 import { selection, selectionEdge } from "../style";
 import { FindXAndWidthType } from "./SeqBlock";
 
+import type { JSX } from "react";
+
 interface EdgesProps {
   findXAndWidth: FindXAndWidthType;
   firstBase: number;

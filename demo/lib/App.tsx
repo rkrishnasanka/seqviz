@@ -104,8 +104,8 @@ export default class App extends React.Component<any, AppState> {
     viewer: "both",
     zoom: 50,
   };
-  linearRef: React.RefObject<HTMLDivElement> = React.createRef();
-  circularRef: React.RefObject<HTMLDivElement> = React.createRef();
+  linearRef: React.RefObject<HTMLDivElement | null> = React.createRef();
+  circularRef: React.RefObject<HTMLDivElement | null> = React.createRef();
 
   componentDidMount = async () => {
     const seq = await seqparse(file);

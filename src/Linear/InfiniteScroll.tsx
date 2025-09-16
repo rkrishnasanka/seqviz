@@ -5,6 +5,8 @@ import { Size } from "../elements";
 import { isEqual } from "../isEqual";
 import { linearScroller } from "../style";
 
+import type { JSX } from "react";
+
 interface InfiniteScrollProps {
   blockHeights: number[];
   bpsPerBlock: number;
@@ -34,8 +36,8 @@ export class InfiniteScroll extends React.PureComponent<InfiniteScrollProps, Inf
   static context: React.ContextType<typeof CentralIndexContext>;
   declare context: React.ContextType<typeof CentralIndexContext>;
 
-  scroller: React.RefObject<HTMLDivElement> = React.createRef(); // ref to a div for scrolling
-  insideDOM: React.RefObject<HTMLDivElement> = React.createRef(); // ref to a div inside the scroller div
+  scroller: React.RefObject<HTMLDivElement | null> = React.createRef(); // ref to a div for scrolling
+  insideDOM: React.RefObject<HTMLDivElement | null> = React.createRef(); // ref to a div inside the scroller div
   timeoutID;
 
   constructor(props: InfiniteScrollProps) {

@@ -8,6 +8,8 @@ import { createTranslations } from "../sequence";
 import { InfiniteScroll } from "./InfiniteScroll";
 import { SeqBlock } from "./SeqBlock";
 
+import type { JSX } from "react";
+
 export interface LinearProps {
   annotations: Annotation[];
   bpColors?: { [key: number | string]: string };
